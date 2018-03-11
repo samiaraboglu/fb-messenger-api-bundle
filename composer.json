@@ -1,0 +1,30 @@
+{
+    "name": "samiaraboglu/fb-messenger-api-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony Facebook Messenger Api Bundle",
+    "keywords": ["symfony", "symfony-bundle", "facebook", "messenger", "api"],
+    "homepage": "https://github.com/samiaraboglu/fb-messenger-api-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+          "name": "Sami Araboğlu",
+          "email": "samiaraboglu@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "symfony/framework-bundle": "~3.0",
+        "samiaraboglu/fb-messenger-bot-php": "^1.6"
+    },
+    "require-dev": {
+
+    },
+    "suggest": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "samiaraboglu\\FbMessengerApiBundle\\": ""
+        }
+    }
+}
