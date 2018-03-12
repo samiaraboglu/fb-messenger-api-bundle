@@ -20,7 +20,7 @@ class AppKernel extends Kernel
     {
         $bundles = array(
             // ...
-            new samiaraboglu\FbMessengerApiBundle\FbMessengerApiBundle(),
+            new Samiax\FbMessengerApiBundle\FbMessengerApiBundle(),
         );
         // ...
     }

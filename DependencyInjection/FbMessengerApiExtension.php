@@ -1,6 +1,6 @@
 <?php
 
-namespace samiaraboglu\FbMessengerApiBundle\DependencyInjection;
+namespace Samiax\FbMessengerApiBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

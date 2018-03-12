@@ -1,6 +1,6 @@
 <?php
 
-namespace samiaraboglu\FbMessengerApiBundle;
+namespace Samiax\FbMessengerApiBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
