@@ -1,5 +1,4 @@
 services:
     fb_messenger_api.messenger:
         class: FbMessengerBot\Messenger
-        arguments:
-            bla: { access_token: %fb_messenger_api.access_token%, verify_token: %fb_messenger_api.verify_token% }
+        arguments: ["%fb_messenger_api.access_token%", "%fb_messenger_api.verify_token%"]
