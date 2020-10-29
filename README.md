@@ -10,26 +10,20 @@ $ composer require samiaraboglu/fb-messenger-api-bundle
 
 ### Enable the Bundle
 
-Registered bundles in the `app/AppKernel.php` file of your project:
+Registered bundles in the `config/bundles.php` file of your project:
 
 ```php
-<?php
-class AppKernel extends Kernel
-{
-    public function registerBundles()
-    {
-        $bundles = array(
-            // ...
-            new Samiax\FbMessengerApiBundle\FbMessengerApiBundle(),
-        );
-        // ...
-    }
+
+return [
     // ...
-}
+    Samiax\FbMessengerApiBundle\FbMessengerApiBundle::class => ['all' => true],
+    // ...
+];
+
 ```
 
 ### Config
-Add this to config.yml:
+Add this to config/packages/fb_messenger_api.yaml:
 
 ```yaml
 fb_messenger_api:
@@ -41,10 +35,38 @@ fb_messenger_api:
 Send text message:
 
 ```php
-$messenger = $this->get('fb_messenger_api.messenger');
-$message = $messenger->message;
+namespace App\Controller\Messenger;
 
-$message->text('<MESSAGE_TEXT>');
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
 
-$messenger->send(<PSID>, $message);
+use Samiax\FbMessengerApiBundle\Service\MessengerApi;
+
+/**
+ * Messenger Controller
+ *
+ * @Route("/messenger", name="app_messenger_")
+ */
+class MessengerController extends AbstractController
+{
+    /**
+     * @Route("/send", name="send")
+     *
+     * @return Response
+     */
+    public function sendAction(MessengerApi $messengerApi)
+    {
+        $messenger = $messengerApi->messenger;
+
+        $message = $messenger->message;
+
+        $message->text('<MESSAGE_TEXT>');
+
+        $messenger->send(<PSID>, $message);
+
+        return new Response();
+    }
+}
+
 ```
