@@ -2,3 +2,8 @@ services:
     fb_messenger_api.messenger:
         class: FbMessengerBot\Messenger
         arguments: ["%fb_messenger_api.access_token%", "%fb_messenger_api.verify_token%"]
+        public: true
+
+    Samiax\FbMessengerApiBundle\Messenger:
+        alias: fb_messenger_api.messenger
+        public: true
