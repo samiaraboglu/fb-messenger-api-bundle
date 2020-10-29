@@ -4,6 +4,6 @@ services:
         arguments: ["%fb_messenger_api.access_token%", "%fb_messenger_api.verify_token%"]
         public: true
 
-    Samiax\FbMessengerApiBundle\Service\Messenger:
+    Samiax\FbMessengerApiBundle\Service\MessengerApi:
         arguments: ["@fb_messenger_api.messenger"]
         public: true

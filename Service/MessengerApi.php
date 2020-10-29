@@ -2,17 +2,12 @@
 
 namespace Samiax\FbMessengerApiBundle\Service;
 
-class Messenger
+class MessengerApi
 {
     public $messenger;
 
     public function __construct($messenger)
     {
-    	$this->messenger = $messenger;
-    }
-
-    public function getMessage()
-    {
-    	return $this->messenger->message;
+        $this->messenger = $messenger;
     }
 }
